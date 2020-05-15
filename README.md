@@ -1,6 +1,6 @@
 # twitter-scraper
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library designed to scrape tweets from twitter. An opinionated wrapper for the `twint` Python library.
 
 ## Usage
 
