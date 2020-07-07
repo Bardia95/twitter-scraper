@@ -25,4 +25,4 @@
               (set-attr! "User_full" true)
               (set-attr! "Output" output)
               (set-attr! "Store_json" true))]
-    (call-attr twint/run "Followers" q))))
+    (call-attr twint/run "Followers" q)))
