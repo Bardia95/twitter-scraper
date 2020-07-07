@@ -26,3 +26,11 @@
               (set-attr! "Output" output)
               (set-attr! "Store_json" true))]
     (call-attr twint/run "Followers" q)))
+
+(defn following->json [username output]
+  (let [q (-> twint/Config
+              (set-attr! "Username" username)
+              (set-attr! "User_full" true)
+              (set-attr! "Output" output)
+              (set-attr! "Store_json" true))]
+    (call-attr twint/run "Following" q)))
