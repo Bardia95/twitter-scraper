@@ -10,7 +10,7 @@
 (require-python 'twint)
 
 ;; Get tweets from specified user
-(defn tweets->json [username limit output]
+(defn tweets->json [username output limit]
   (let [q (-> twint/Config
               (set-attr! "Username" username)
               (set-attr! "Limit" limit)
@@ -34,3 +34,12 @@
               (set-attr! "Output" output)
               (set-attr! "Store_json" true))]
     (call-attr twint/run "Following" q)))
+
+
+(defn favorites->json [username output limit]
+  (let [q (-> twint/Config
+              (set-attr! "Username" username)
+              (set-attr! "Limit" limit)
+              (set-attr! "Output" output)
+              (set-attr! "Store_json" true))]
+    (call-attr twint/run "Favorites" q)))
